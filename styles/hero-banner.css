@@ -1,0 +1,35 @@
+.hero-banner {
+
+}
+
+.hero-banner__container {
+
+}
+
+.hero-banner__single-banner {
+    background-image: url("../assets/hero-bg.jpg");
+    height: 600px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-banner__content-wrapper {
+    max-width: 80rem;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+.hero-banner__title {
+    margin-bottom: 40px;
+    font-size: 48px;
+    max-width: 50%;
+    color: #4a4b65;
+    font-weight: 600;
+}
+
+.hero-banner__btn {
+    
+}
