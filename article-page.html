@@ -6,24 +6,44 @@
         <title>ray's blog | Article Page</title>
         <link rel="icon" type="image/png" href="./assets/favicon.jpg"/>
         <link rel="stylesheet" href="./styles/article-page.css">
+        <script defer src="./JS/convert-svg.js"></script>
     </head>
     <body>
-        <header>
-            <div class="logo-area">
-                <a class="logo-area__logo" href="./home.html">
-                    <img src="./assets/logo.jpg">
-                </a>
+        <header class="header">
+            <div class="header__left-area">
+                <div class="header__logo-area">
+                    <a class="header__logo" href="./home.html">
+                        <img src="./assets/logo.png">
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
+                    <a class="header__nav-item" href="./home-page.html">About</a>
+                    <a class="header__nav-item" href="./add-page.html">New Blog</a>
+                    <a class="header__nav-item" href="./home-page.html">Contact Us</a>
+                </nav>
             </div>
-            <div class="menu-area">
-                <div class="search-area">
+            <div class="header__right-area">
+                <div class="header__search-area">
                     <form method="GET">
                         <input type="text" placeholder="Search" name="search">
-                        <button type="submit"><img src="assets/search-blue.png"></button>
+                        <button type="submit"><img src="assets/search-purple.png"></button>
                     </form>
                 </div>
-                <nav class="menu-area__nav">
-                    <a class="menu-area__nav__nav-item" href="./add-page.html">Add</a>
-                </nav>
+                <div class="header__social-media">
+                    <a class="facebook" href="https://facebook.com" target="_blank">
+                        <img class="svg" src="assets/facebook.svg">
+                    </a>
+                    <a class="twitter" href="https://twitter.com" target="_blank">
+                        <img class="svg" src="assets/twitter.svg">
+                    </a>
+                    <a class="linkedin" href="https://linkedin.com" target="_blank">
+                        <img class="svg" src="assets/linkedin.svg">
+                    </a>
+                    <a class="instagram" href="https://instagram.com" target="_blank">
+                        <img class="svg" src="assets/instagram.svg">
+                    </a>
+                </div>
             </div>
         </header>
         <div class="main-content">
@@ -89,22 +109,36 @@
             <div class="footer__top-area">
                 <div class="footer__logo-area">
                     <a class="footer__logo" href="home.html">
-                        <img src="./assets/logo.jpg">
+                        <img src="./assets/logo-light.png">
                     </a>
                 </div>
-                <div class="footer__menu-area">
-                    <nav class="footer__nav">
-                        <a class="footer__nav-item" href="./add.html">Add New Article</a>
-                    </nav>
+                <div class="footer__contact-area">
+                    <a class="email" href="mailto:hello@jiangren.com.au" target="_blank">
+                        <img class="svg" src="assets/email.svg">
+                        <span>hello@jiangren.com.au</span>
+                    </a>
+                    <a class="phone" href="tel: 0421672555" target="_blank">
+                        <img class="svg" src="assets/phone.svg">
+                        <span>0421 672 555</span>
+                    </a>
+                </div>
+                <div class="footer__social-media-area">
+                    <a class="facebook" href="https://facebook.com" target="_blank">
+                        <img class="svg" src="assets/facebook.svg">
+                    </a>
+                    <a class="twitter" href="https://twitter.com" target="_blank">
+                        <img class="svg" src="assets/twitter.svg">
+                    </a>
+                    <a class="linkedin" href="https://linkedin.com" target="_blank">
+                        <img class="svg" src="assets/linkedin.svg">
+                    </a>
+                    <a class="instagram" href="https://instagram.com" target="_blank">
+                        <img class="svg" src="assets/instagram.svg">
+                    </a>
                 </div>
             </div>
             <div class="footer__bottom-area">
-                <span class="footer__copyright">©2021 ray's blog</span>
-                <div class="footer__media-links">
-                    <a href="https://www.linkedin.com/in/xinran-ma/">
-                        <img src="./assets/linkedin.png">
-                    </a>
-                </div>
+                <span class="footer__copyright">© 2021 All rights reserved.</span>
             </div>
         </footer>
         <script>
