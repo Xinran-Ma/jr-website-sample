@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Around Food Blog | Article Page</title>
-        <link rel="icon" type="image/png" href="./assets/favicon.png"/>
-        <link rel="stylesheet" href="./styles/article-page.css">
+        <title>ray's blog | Update Blog</title>
+        <link rel="icon" type="image/png" href="./assets/favicon.jpg"/>
+        <link rel="stylesheet" href="./styles/update-page.css">
+        <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
         <script defer src="./JS/convert-svg.js"></script>
     </head>
     <body>
         <header class="header">
             <div class="header__left-area">
                 <div class="header__logo-area">
-                    <a class="header__logo" href="./home-page.html">
+                    <a class="header__logo" href="./home.html">
                         <img src="./assets/logo.png">
                     </a>
                 </div>
@@ -47,24 +49,28 @@
             </div>
         </header>
         <div class="main-content">
-            <div class="article-details">
-                <div class="article-details__heading-area">
-                    <h1>Unimelb 墨尔本大学| 拯救让你头秃的 Presentation !这些衔接语句助你一臂之力~</h1>
-                </div>
-                <div class="article-details__info-area">
-                    <span class="article-details__author">Ray Ma</span>
-                    <span class="article-details__publish-date">01/08/2021</span>
-                </div>
-                <div class="article-details__content-area">
-                    <p>对于咱们留学生来说Presentation一直是让大家头痛有头秃的一大难题!</p>
-                    <p>不仅要在内容上做大量研究, ppt样式也要精雕细琢~ 全部完成后, 展示当天的演讲更重中之重! (按住自己紧张颤抖的小手手…</p>
-                    <p>课代表也了解到现在大部分澳洲留学生只能在国内上网课, 英文环境约等于零那这纯英pre更是压力山大!</p>
-                    <p>别急别急~课代表特意整理了这份"Presentation必备衔接语句"不仅解决你的英语难题, 更是帮你理清思路的必备法宝~</p>
-                </div>
-                <div class="article-details__extra-operation-area">
-                    <button class="article-details__btn btn btn-primary" onclick="editArticle()">Edit Article</button>
-                    <button class="article-details__btn btn btn-secondary" onclick="deleteArticle()">Delete Article</button>
-                </div>
+            <div class="new-article">
+                <form method="POST">
+                    <div class="title-wrapper input-wrapper flex-column">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="author-wrapper input-wrapper flex-column">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author">
+                    </div>
+                    <div class="featured-article-wrapper input-wrapper">
+                        <input type="checkbox" id="featured-article" name="featured-article">
+                        <label for="featured-article">Featured Article?</label>
+                    </div>
+                    <div class="content-wrapper input-wrapper flex-column">
+                        <label for="content">Content:</label>
+                        <div id="article-content" class="article-content"></div>
+                    </div>
+                    <div class="submit-wrapper">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
             <section class="categorised-articles-container">
                 <div class="categorised-articles-container__articles-card">
@@ -142,17 +148,7 @@
             </div>
         </footer>
         <script>
-            function deleteArticle() {
-                const returnMsg = confirm("Do you really want to delete this article?");
-
-                if(returnMsg === true) {
-                    // Delete this article
-                }
-            }
-
-            function editArticle() {
-                // redirect to the update-page with article id
-            }
+            let editor = new FroalaEditor('#article-content');
         </script>
     </body>
 </html>

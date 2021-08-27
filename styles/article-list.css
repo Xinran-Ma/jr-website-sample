@@ -61,6 +61,18 @@
     background-color: #f74f78;
 }
 
+.article-list__tag.orange-tag {
+    background-color: rgb(255, 177, 92);
+}
+
+.article-list__tag.green-tag {
+    background-color: rgb(22, 201, 149);
+}
+
+.article-list__tag.purple-tag {
+    background-color: rgb(106, 155, 244);
+}
+
 .article-list__right-column {
     flex: 0 0 57%;
     padding: 32px;
