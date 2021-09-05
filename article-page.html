@@ -7,43 +7,95 @@
         <link rel="icon" type="image/png" href="./assets/favicon.png"/>
         <link rel="stylesheet" href="./styles/article-page.css">
         <script defer src="./JS/convert-svg.js"></script>
+        <script defer src="./JS/mobile-menu.js"></script>
     </head>
     <body>
         <header class="header">
-            <div class="header__left-area">
-                <div class="header__logo-area">
-                    <a class="header__logo" href="./home-page.html">
-                        <img src="./assets/logo.png">
-                    </a>
+            <div class="header__container hide-for-mobile">
+                <div class="header__left-area">
+                    <div class="header__logo-area">
+                        <a class="header__logo" href="./home-page.html">
+                            <img src="./assets/logo.png">
+                        </a>
+                    </div>
+                    <nav class="header__nav">
+                        <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__nav-item" href="./home-page.html">About</a>
+                        <a class="header__nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
                 </div>
-                <nav class="header__nav">
-                    <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
-                    <a class="header__nav-item" href="./home-page.html">About</a>
-                    <a class="header__nav-item" href="./add-page.html">New Blog</a>
-                    <a class="header__nav-item" href="./home-page.html">Contact Us</a>
-                </nav>
+                <div class="header__right-area">
+                    <div class="header__search-area">
+                        <form method="GET">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><img src="assets/search-purple.png"></button>
+                        </form>
+                    </div>
+                    <div class="header__social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="header__right-area">
-                <div class="header__search-area">
-                    <form method="GET">
-                        <input type="text" placeholder="Search" name="search">
-                        <button type="submit"><img src="assets/search-purple.png"></button>
-                    </form>
-                </div>
-                <div class="header__social-media">
-                    <a class="facebook" href="https://facebook.com" target="_blank">
-                        <img class="svg" src="assets/facebook.svg">
-                    </a>
-                    <a class="twitter" href="https://twitter.com" target="_blank">
-                        <img class="svg" src="assets/twitter.svg">
-                    </a>
-                    <a class="linkedin" href="https://linkedin.com" target="_blank">
-                        <img class="svg" src="assets/linkedin.svg">
-                    </a>
-                    <a class="instagram" href="https://instagram.com" target="_blank">
-                        <img class="svg" src="assets/instagram.svg">
+            <div class="header__mobile-nav-container hide-for-larger-device">
+                <button class="header__mobile-menu-hamburger" onclick="openMobileMenu()">
+                    <img class="svg" src="./assets/menu.svg">
+                </button>
+                <div class="header__mobile-logo-area">
+                    <a class="header__mobile-logo" href="./home-page.html">
+                        <img src="./assets/logo-icon.png">
                     </a>
                 </div>
+                <button class="header__mobile-search-button" onclick="toggleSearchField()">
+                    <img src="./assets/search-purple.png">
+                </button>
+            </div>
+            <div class="header__mobile-menu-wrapper">
+                <div class="header__mobile-menu-header">
+                    <span>Menu</span>
+                    <button class="header__mobile-menu-hamburger" onclick="closeMobileMenu()">
+                        <img class="svg" src="./assets/close.svg">
+                    </button>
+                </div>
+                <div class="header__mobile-details-area">
+                    <nav class="header__mobile-nav">
+                        <a class="header__mobile-nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__mobile-nav-item" href="./home-page.html">About</a>
+                        <a class="header__mobile-nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__mobile-nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
+                    <div class="header__mobile-social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header__mobile-search-area">
+                <form method="GET">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"><img src="assets/search-purple.png"></button>
+                </form>
             </div>
         </header>
         <div class="main-content">
@@ -52,8 +104,28 @@
                     <h1>Unimelb 墨尔本大学| 拯救让你头秃的 Presentation !这些衔接语句助你一臂之力~</h1>
                 </div>
                 <div class="article-details__info-area">
-                    <span class="article-details__author">Ray Ma</span>
-                    <span class="article-details__publish-date">01/08/2021</span>
+                    <div class="article-details__article-info">
+                        <span class="article-details__author">Ray Ma</span>
+                    <span class="article-details__publish-date">
+                        <img class="svg" src="./assets/calendar.svg"/>
+                        01/08/2021
+                    </span>
+                    </div>
+                    <div class="article-details__social-media">
+                        <span>Share post:</span>
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="assets/instagram.svg">
+                        </a>
+                    </div>
                 </div>
                 <div class="article-details__content-area">
                     <p>对于咱们留学生来说Presentation一直是让大家头痛有头秃的一大难题!</p>
@@ -68,40 +140,36 @@
             </div>
             <section class="categorised-articles-container">
                 <div class="categorised-articles-container__articles-card">
-                    <h2>Featured Articles</h2>
+                    <h2>Featured recipes</h2>
                     <div class="categorised-articles-container__articles-list">
                         <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
+                            <a class="categorised-articles-container__image" href="#">
+                                <img src="./assets/featured-recipes-small-01.jpg">
+                            </a>
+                            <div class="categorised-articles-container__article-content">
+                                <a class="categorised-articles-container__article-title" href="./home.html">Sweet Cream Cupcake</a>
+                                <span class="categorised-articles-container__article-publisher">by Amelie Mayer</span>
+                            </div>
                         </div>
                         <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
+                            <a class="categorised-articles-container__image" href="#">
+                                <img src="./assets/featured-recipes-small-02.jpg">
+                            </a>
+                            <div class="categorised-articles-container__article-content">
+                                <a class="categorised-articles-container__article-title" href="./home.html">Sweet Cream Cupcake</a>
+                                <span class="categorised-articles-container__article-publisher">by Amelie Mayer</span>
+                            </div>
                         </div>
                         <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
+                            <a class="categorised-articles-container__image" href="#">
+                                <img src="./assets/featured-recipes-small-03.jpg">
+                            </a>
+                            <div class="categorised-articles-container__article-content">
+                                <a class="categorised-articles-container__article-title" href="./home.html">Sweet Cream Cupcake</a>
+                                <span class="categorised-articles-container__article-publisher">by Amelie Mayer</span>
+                            </div>
                         </div>
                     </div>
-                    <a class="categorised-articles-container__more-relative-articles" href="./home.html">More ></a>
-                </div>
-                <div class="categorised-articles-container__articles-card">
-                    <h2>Featured Articles</h2>
-                    <div class="categorised-articles-container__articles-list">
-                        <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
-                        </div>
-                        <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
-                        </div>
-                        <div class="categorised-articles-container__single-article">
-                            <a class="categorised-articles-container__article-title" href="./home.html">Unimelb 墨尔本大学| 留学生网课必备! zoom 里拥有 实时字幕, 再也不用担心老师们的奇特口音了!</a>
-                            <span class="categorised-articles-container__article-publish-date">02/08/2021</span>
-                        </div>
-                    </div>
-                    <a class="categorised-articles-container__more-relative-articles" href="./home.html">More ></a>
                 </div>
             </section>
         </div>

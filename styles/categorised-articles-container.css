@@ -5,8 +5,21 @@
     flex-direction: column;
 }
 
+@media only screen and (max-width:767px) {
+    .categorised-articles-container {
+        flex: 0 0 auto;
+        padding: 20px;
+    }
+}
+
 .categorised-articles-container__articles-card {
     padding-left: 24px;
+}
+
+@media only screen and (max-width:767px) {
+    .categorised-articles-container__articles-card {
+        padding-left: 0px;
+    }
 }
 
 .categorised-articles-container h2 {

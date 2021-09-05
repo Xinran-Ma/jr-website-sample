@@ -7,43 +7,95 @@
         <link rel="icon" type="image/png" href="./assets/favicon.png"/>
         <link rel="stylesheet" href="./styles/search-results-page.css">
         <script defer src="./JS/convert-svg.js"></script>
+        <script defer src="./JS/mobile-menu.js"></script>
     </head>
     <body>
         <header class="header">
-            <div class="header__left-area">
-                <div class="header__logo-area">
-                    <a class="header__logo" href="./home-page.html">
-                        <img src="./assets/logo.png">
-                    </a>
+            <div class="header__container hide-for-mobile">
+                <div class="header__left-area">
+                    <div class="header__logo-area">
+                        <a class="header__logo" href="./home-page.html">
+                            <img src="./assets/logo.png">
+                        </a>
+                    </div>
+                    <nav class="header__nav">
+                        <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__nav-item" href="./home-page.html">About</a>
+                        <a class="header__nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
                 </div>
-                <nav class="header__nav">
-                    <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
-                    <a class="header__nav-item" href="./home-page.html">About</a>
-                    <a class="header__nav-item" href="./add-page.html">New Blog</a>
-                    <a class="header__nav-item" href="./home-page.html">Contact Us</a>
-                </nav>
+                <div class="header__right-area">
+                    <div class="header__search-area">
+                        <form method="GET">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><img src="assets/search-purple.png"></button>
+                        </form>
+                    </div>
+                    <div class="header__social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="header__right-area">
-                <div class="header__search-area">
-                    <form method="GET">
-                        <input type="text" placeholder="Search" name="search">
-                        <button type="submit"><img src="assets/search-purple.png"></button>
-                    </form>
-                </div>
-                <div class="header__social-media">
-                    <a class="facebook" href="https://facebook.com" target="_blank">
-                        <img class="svg" src="assets/facebook.svg">
-                    </a>
-                    <a class="twitter" href="https://twitter.com" target="_blank">
-                        <img class="svg" src="assets/twitter.svg">
-                    </a>
-                    <a class="linkedin" href="https://linkedin.com" target="_blank">
-                        <img class="svg" src="assets/linkedin.svg">
-                    </a>
-                    <a class="instagram" href="https://instagram.com" target="_blank">
-                        <img class="svg" src="assets/instagram.svg">
+            <div class="header__mobile-nav-container hide-for-larger-device">
+                <button class="header__mobile-menu-hamburger" onclick="openMobileMenu()">
+                    <img class="svg" src="./assets/menu.svg">
+                </button>
+                <div class="header__mobile-logo-area">
+                    <a class="header__mobile-logo" href="./home-page.html">
+                        <img src="./assets/logo-icon.png">
                     </a>
                 </div>
+                <button class="header__mobile-search-button" onclick="toggleSearchField()">
+                    <img src="./assets/search-purple.png">
+                </button>
+            </div>
+            <div class="header__mobile-menu-wrapper">
+                <div class="header__mobile-menu-header">
+                    <span>Menu</span>
+                    <button class="header__mobile-menu-hamburger" onclick="closeMobileMenu()">
+                        <img class="svg" src="./assets/close.svg">
+                    </button>
+                </div>
+                <div class="header__mobile-details-area">
+                    <nav class="header__mobile-nav">
+                        <a class="header__mobile-nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__mobile-nav-item" href="./home-page.html">About</a>
+                        <a class="header__mobile-nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__mobile-nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
+                    <div class="header__mobile-social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header__mobile-search-area">
+                <form method="GET">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"><img src="assets/search-purple.png"></button>
+                </form>
             </div>
         </header>
         <div class="main-content">

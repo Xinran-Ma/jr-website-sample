@@ -7,43 +7,95 @@
         <link rel="icon" type="image/png" href="./assets/favicon.png">
         <link rel="stylesheet" href="./styles/home-page.css">
         <script defer src="./JS/convert-svg.js"></script>
+        <script defer src="./JS/mobile-menu.js"></script>
     </head>
     <body>
         <header class="header">
-            <div class="header__left-area">
-                <div class="header__logo-area">
-                    <a class="header__logo" href="./home-page.html">
-                        <img src="./assets/logo.png">
-                    </a>
+            <div class="header__container hide-for-mobile">
+                <div class="header__left-area">
+                    <div class="header__logo-area">
+                        <a class="header__logo" href="./home-page.html">
+                            <img src="./assets/logo.png">
+                        </a>
+                    </div>
+                    <nav class="header__nav">
+                        <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__nav-item" href="./home-page.html">About</a>
+                        <a class="header__nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
                 </div>
-                <nav class="header__nav">
-                    <a class="header__nav-item current-page" href="./home-page.html">Home</a> 
-                    <a class="header__nav-item" href="./home-page.html">About</a>
-                    <a class="header__nav-item" href="./add-page.html">New Blog</a>
-                    <a class="header__nav-item" href="./home-page.html">Contact Us</a>
-                </nav>
+                <div class="header__right-area">
+                    <div class="header__search-area">
+                        <form method="GET">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><img src="assets/search-purple.png"></button>
+                        </form>
+                    </div>
+                    <div class="header__social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="header__right-area">
-                <div class="header__search-area">
-                    <form method="GET">
-                        <input type="text" placeholder="Search" name="search">
-                        <button type="submit"><img src="assets/search-purple.png"></button>
-                    </form>
-                </div>
-                <div class="header__social-media">
-                    <a class="facebook" href="https://facebook.com" target="_blank">
-                        <img class="svg" src="assets/facebook.svg">
-                    </a>
-                    <a class="twitter" href="https://twitter.com" target="_blank">
-                        <img class="svg" src="assets/twitter.svg">
-                    </a>
-                    <a class="linkedin" href="https://linkedin.com" target="_blank">
-                        <img class="svg" src="assets/linkedin.svg">
-                    </a>
-                    <a class="instagram" href="https://instagram.com" target="_blank">
-                        <img class="svg" src="assets/instagram.svg">
+            <div class="header__mobile-nav-container hide-for-larger-device">
+                <button class="header__mobile-menu-hamburger" onclick="openMobileMenu()">
+                    <img class="svg" src="./assets/menu.svg">
+                </button>
+                <div class="header__mobile-logo-area">
+                    <a class="header__mobile-logo" href="./home-page.html">
+                        <img src="./assets/logo-icon.png">
                     </a>
                 </div>
+                <button class="header__mobile-search-button" onclick="toggleSearchField()">
+                    <img src="./assets/search-purple.png">
+                </button>
+            </div>
+            <div class="header__mobile-menu-wrapper">
+                <div class="header__mobile-menu-header">
+                    <span>Menu</span>
+                    <button class="header__mobile-menu-hamburger" onclick="closeMobileMenu()">
+                        <img class="svg" src="./assets/close.svg">
+                    </button>
+                </div>
+                <div class="header__mobile-details-area">
+                    <nav class="header__mobile-nav">
+                        <a class="header__mobile-nav-item current-page" href="./home-page.html">Home</a> 
+                        <a class="header__mobile-nav-item" href="./home-page.html">About</a>
+                        <a class="header__mobile-nav-item" href="./add-page.html">New Blog</a>
+                        <a class="header__mobile-nav-item" href="./home-page.html">Contact Us</a>
+                    </nav>
+                    <div class="header__mobile-social-media">
+                        <a class="facebook" href="https://facebook.com" target="_blank">
+                            <img class="svg" src="./assets/facebook.svg">
+                        </a>
+                        <a class="twitter" href="https://twitter.com" target="_blank">
+                            <img class="svg" src="./assets/twitter.svg">
+                        </a>
+                        <a class="linkedin" href="https://linkedin.com" target="_blank">
+                            <img class="svg" src="./assets/linkedin.svg">
+                        </a>
+                        <a class="instagram" href="https://instagram.com" target="_blank">
+                            <img class="svg" src="./assets/instagram.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header__mobile-search-area">
+                <form method="GET">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"><img src="assets/search-purple.png"></button>
+                </form>
             </div>
         </header>
         <div class="main-content">
@@ -75,7 +127,7 @@
                     <a class="article-card__single-card" href="#">
                         <div class="article-card__upper-area">
                             <span class="article-card__tag blue-tag">Soups</span>
-                            <img class="article-card__banner" src="./assets/featured-recipes-01.jpg">
+                            <img class="article-card__banner" src="./assets/featured-recipes-02.jpg">
                             <span class="article-card__discover-more">Discover this recipe <img class="svg" src="./assets/right-arrow.svg"></span>
                         </div>
                         <div class="article-card__lower-area">
@@ -89,7 +141,7 @@
                     <a class="article-card__single-card" href="#">
                         <div class="article-card__upper-area">
                             <span class="article-card__tag orange-tag">Desserts</span>
-                            <img class="article-card__banner" src="./assets/featured-recipes-01.jpg">
+                            <img class="article-card__banner" src="./assets/featured-recipes-03.jpg">
                             <span class="article-card__discover-more">Discover this recipe <img class="svg" src="./assets/right-arrow.svg"></span>
                         </div>
                         <div class="article-card__lower-area">
@@ -142,12 +194,12 @@
                     <!-- Single Article Block -->
                     <article class="article-list__single-article">
                         <a class="article-list__left-column" href="">
-                            <span class="article-list__tag orange-tag">Seafood</span>
-                            <img src="assets/post-banner-01.jpg">
+                            <span class="article-list__tag orange-tag">Desserts</span>
+                            <img src="assets/post-banner-02.jpg">
                         </a>
                         <div class="article-list__right-column">
                             <span class="article-list__publish-date"><img class="svg" src="./assets/calendar.svg"/> 02/08/2021</span>
-                            <a href=""><h3 class="article-list__article-title">Asian Chilli Garlic Shrimps</h3></a>
+                            <a href=""><h3 class="article-list__article-title">Belgian Waffles With Triple Berry Sauce</h3></a>
                             <p>Dignissim suspendisse in est ante in nibh mauris cursus mattis. Tempor id eu nisl nunc mi. Scelerisque eu ultrices vitae auctor. Ut faucibus pulvinar elementum integer. Sed vulputate mi sit amet mauris commodo. In eu mi bibendum neque…</p>
                         </div>
                     </article>
@@ -155,12 +207,12 @@
                     <!-- Single Article Block -->
                     <article class="article-list__single-article">
                         <a class="article-list__left-column" href="">
-                            <span class="article-list__tag green-tag">Seafood</span>
-                            <img src="assets/post-banner-01.jpg">
+                            <span class="article-list__tag green-tag">Salad</span>
+                            <img src="assets/post-banner-03.jpg">
                         </a>
                         <div class="article-list__right-column">
                             <span class="article-list__publish-date"><img class="svg" src="./assets/calendar.svg"/> 02/08/2021</span>
-                            <a href=""><h3 class="article-list__article-title">Asian Chilli Garlic Shrimps</h3></a>
+                            <a href=""><h3 class="article-list__article-title">Vegan Bowl With Avocado, Cabbage And Quinoa</h3></a>
                             <p>Dignissim suspendisse in est ante in nibh mauris cursus mattis. Tempor id eu nisl nunc mi. Scelerisque eu ultrices vitae auctor. Ut faucibus pulvinar elementum integer. Sed vulputate mi sit amet mauris commodo. In eu mi bibendum neque…</p>
                         </div>
                     </article>
@@ -168,12 +220,12 @@
                     <!-- Single Article Block -->
                     <article class="article-list__single-article">
                         <a class="article-list__left-column" href="">
-                            <span class="article-list__tag purple-tag">Seafood</span>
-                            <img src="assets/post-banner-01.jpg">
+                            <span class="article-list__tag purple-tag">Vegan</span>
+                            <img src="assets/post-banner-04.jpg">
                         </a>
                         <div class="article-list__right-column">
                             <span class="article-list__publish-date"><img class="svg" src="./assets/calendar.svg"/> 02/08/2021</span>
-                            <a href=""><h3 class="article-list__article-title">Asian Chilli Garlic Shrimps</h3></a>
+                            <a href=""><h3 class="article-list__article-title">Toast In A Bowl</h3></a>
                             <p>Dignissim suspendisse in est ante in nibh mauris cursus mattis. Tempor id eu nisl nunc mi. Scelerisque eu ultrices vitae auctor. Ut faucibus pulvinar elementum integer. Sed vulputate mi sit amet mauris commodo. In eu mi bibendum neque…</p>
                         </div>
                     </article>
@@ -181,12 +233,12 @@
                     <!-- Single Article Block -->
                     <article class="article-list__single-article">
                         <a class="article-list__left-column" href="">
-                            <span class="article-list__tag pink-tag">Seafood</span>
-                            <img src="assets/post-banner-01.jpg">
+                            <span class="article-list__tag pink-tag">Asian</span>
+                            <img src="assets/post-banner-05.jpg">
                         </a>
                         <div class="article-list__right-column">
                             <span class="article-list__publish-date"><img class="svg" src="./assets/calendar.svg"/> 02/08/2021</span>
-                            <a href=""><h3 class="article-list__article-title">Asian Chilli Garlic Shrimps</h3></a>
+                            <a href=""><h3 class="article-list__article-title">Vegan Stir Fry With Rice Vermicelli</h3></a>
                             <p>Dignissim suspendisse in est ante in nibh mauris cursus mattis. Tempor id eu nisl nunc mi. Scelerisque eu ultrices vitae auctor. Ut faucibus pulvinar elementum integer. Sed vulputate mi sit amet mauris commodo. In eu mi bibendum neque…</p>
                         </div>
                     </article>
@@ -207,7 +259,7 @@
                             </div>
                             <div class="categorised-articles-container__single-article">
                                 <a class="categorised-articles-container__image" href="#">
-                                    <img src="./assets/featured-recipes-small-01.jpg">
+                                    <img src="./assets/featured-recipes-small-02.jpg">
                                 </a>
                                 <div class="categorised-articles-container__article-content">
                                     <a class="categorised-articles-container__article-title" href="./home.html">Sweet Cream Cupcake</a>
@@ -216,7 +268,7 @@
                             </div>
                             <div class="categorised-articles-container__single-article">
                                 <a class="categorised-articles-container__image" href="#">
-                                    <img src="./assets/featured-recipes-small-01.jpg">
+                                    <img src="./assets/featured-recipes-small-03.jpg">
                                 </a>
                                 <div class="categorised-articles-container__article-content">
                                     <a class="categorised-articles-container__article-title" href="./home.html">Sweet Cream Cupcake</a>
@@ -227,7 +279,6 @@
                     </div>
                 </section>
             </section>
-            
         </div>
         <footer class="footer">
             <div class="footer__top-area">

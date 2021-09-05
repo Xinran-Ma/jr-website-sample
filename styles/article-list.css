@@ -1,8 +1,15 @@
  .article-list {
-    padding: 16px 0;
+    padding: 64px 0;
     display: flex;
     max-width: 80rem;
     margin: 0 auto;
+}
+
+@media only screen and (max-width:767px) {
+    .article-list {
+        flex-direction: column;
+        padding: 32px 0;
+    }
 }
 
 .article-list__list {
@@ -21,6 +28,13 @@
     overflow: hidden;
     margin-bottom: 30px;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media only screen and (max-width:767px) {
+    .article-list__single-article {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
 }
 
 .article-list__single-article:last-child {
@@ -76,6 +90,13 @@
 .article-list__right-column {
     flex: 0 0 57%;
     padding: 32px;
+}
+
+@media only screen and (max-width:767px) {
+    .article-list__right-column {
+        flex: 0 0 auto;
+        padding: 20px;
+    }
 }
 
 .article-list__right-column a {

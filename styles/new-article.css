@@ -1,8 +1,15 @@
 .new-article {
-    flex: 0 0 75%;
+    flex: 0 0 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    .new-article {
+        padding: 20px;
+        width: 100%;
+    }
 }
 
 .new-article form {
@@ -18,14 +25,31 @@
     flex: 0 0 50%;
 }
 
+@media only screen and (max-width: 767px) {
+    .input-wrapper {
+        flex: 1 0 100%;
+    }
+}
+
 .flex-column {
     flex-direction: column;
     align-items: flex-start;
     padding: 0 20px;
 }
 
+@media only screen and (max-width: 767px) {
+    .flex-column {
+        align-items: stretch;
+        padding: 0;
+    }
+}
+
+.featured-article-wrapper {
+    flex-direction: row;
+}
+
 .new-article input[type='text'], .new-article select {
-    max-width: 300px;
+    width: 100%;
     border: 1px solid #cccccc;
     border-radius: 6px;
     padding: 8px 10px;
